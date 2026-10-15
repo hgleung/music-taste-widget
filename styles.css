@@ -164,35 +164,3 @@ music-taste-widget {
 .mtw-genre .mtw-num {
   text-align: right;
 }
-
-.mtw-more {
-  margin-top: 0.875rem;
-}
-
-.mtw-more > summary {
-  display: inline-block;
-  cursor: pointer;
-  list-style: none;
-  font-size: 0.75rem;
-  color: var(--_muted);
-}
-
-.mtw-more > summary::-webkit-details-marker {
-  display: none;
-}
-
-.mtw-more > summary::before {
-  content: "+ ";
-}
-
-.mtw-more[open] > summary::before {
-  content: "\2212  ";
-}
-
-.mtw-more > summary:hover {
-  color: var(--_strong);
-}
-
-.mtw-more > .mtw-block:first-of-type {
-  margin-top: 0.75rem;
-}

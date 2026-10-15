@@ -18,7 +18,7 @@ Listens widely across 63 genres but keeps coming back to Yel and keshi.
 Diversity  85%  listens to everything across 63 genres
 Loyalty    69%  clear favorites, some variety; Yel is 21% of plays
 Drift       8%  small shifts lately: more r&b, less electronic and dubstep
-+ Breakdown     top 5 genres as bars
+Top genres      top 5 genres as bars
 ```
 
 No runtime dependencies. Pieces you can use together or alone:
@@ -132,7 +132,6 @@ renderWidget(data, {
   sections?: Section[],       // slots, in order; empty ones render hidden for the element to fill
   headings?: { nowPlaying?, lastPlayed?, top?, taste? },
   attribution?: boolean,      // Music Taste Visualizer footnote, default true
-  expanded?: boolean,         // taste breakdown open by default, default false
 });
 renderSection(section, data, options);
 ```

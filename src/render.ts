@@ -14,8 +14,6 @@ export interface RenderOptions {
   headings?: Partial<Headings>;
   /** Footnote crediting Music Taste Visualizer. Default true. */
   attribution?: boolean;
-  /** Show the taste breakdown (top genre bars) expanded instead of behind a toggle. Default false. */
-  expanded?: boolean;
 }
 
 const DEFAULT_HEADINGS: Headings = {
@@ -115,10 +113,7 @@ function tasteSection(t: TasteReport, heading: string, options: RenderOptions): 
     metric("Loyalty", l.score, `${esc(l.label)}; ${link(l.topArtist.url, l.topArtist.name)} is ${pct(l.topArtist.share)} of plays`) +
     (drift ? metric("Drift", drift.score, driftDetail) : "") +
     `</div>` +
-    (genres
-      ? `<details class="mtw-more"${options.expanded ? " open" : ""}><summary>Breakdown</summary>` +
-        `<div class="mtw-block"><h4 class="mtw-subheading">Top genres</h4><ol class="mtw-list">${genres}</ol></div></details>`
-      : "") +
+    (genres ? `<div class="mtw-block"><h4 class="mtw-subheading">Top genres</h4><ol class="mtw-list">${genres}</ol></div>` : "") +
     (options.attribution ?? true
       ? `<p class="mtw-footnote">From the top ${t.artistsSampled} artists, scored with ${link(VISUALIZER_URL, "Music Taste Visualizer")}'s method.</p>`
       : "")
