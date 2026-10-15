@@ -1,0 +1,39 @@
+{
+  "name": "music-taste-widget",
+  "version": "0.1.0",
+  "description": "Embeddable Last.fm listening widget: now playing, top artists, and a six-month taste report (diversity, loyalty, drift, archetype).",
+  "license": "MIT",
+  "author": "Harry Leung <hleung.cs@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgleung/music-taste-widget.git"
+  },
+  "keywords": ["lastfm", "last.fm", "music", "widget", "web-component", "now-playing", "scrobble"],
+  "type": "module",
+  "sideEffects": ["./dist/element.js", "./styles.css"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./element": {
+      "types": "./dist/element.d.ts",
+      "default": "./dist/element.js"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "files": ["dist", "styles.css"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "test": "node --test \"test/*.test.ts\"",
+    "check": "tsc -p tsconfig.json --noEmit && tsc -p test/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
